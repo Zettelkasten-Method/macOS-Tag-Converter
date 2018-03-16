@@ -85,14 +85,3 @@ class ConversionViewController: NSViewController {
         lineStepper.isEnabled = isPlacingAtLine
     }
 }
-
-struct Conversion {
-    let notes: [Note]
-    let insertMissingHashtagsOnly: Bool
-    let hashtagPlacement: HashtagPlacement
-}
-
-enum HashtagPlacement {
-    case append
-    case atLine(Int)
-}

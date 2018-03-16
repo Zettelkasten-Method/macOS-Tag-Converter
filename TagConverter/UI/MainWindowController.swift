@@ -2,7 +2,7 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController, DirectoryReaderOutput {
+class MainWindowController: NSWindowController, DirectoryReaderOutput, HashtagConverterOutput {
 
     @IBOutlet weak var notesViewController: NotesViewController!
     @IBOutlet weak var conversionViewController: ConversionViewController!
@@ -15,14 +15,17 @@ class MainWindowController: NSWindowController, DirectoryReaderOutput {
         super.windowDidLoad()
         window?.isMovableByWindowBackground = true
         directoryPathLabel.isHidden = true
+        conversionViewController.conversionHandler = conversionHandler
     }
 
     @IBOutlet weak var directoryPathLabel: NSTextField!
     @IBOutlet weak var changeDirectoryButton: NSButton!
     var directoryPickerHandler: ((URL) -> Void)?
     var conversionHandler: ((Conversion) -> Void)? {
-        get { return conversionViewController.conversionHandler }
-        set { conversionViewController.conversionHandler = newValue }
+        didSet {
+            guard isWindowLoaded else { return }
+            conversionViewController.conversionHandler = conversionHandler
+        }
     }
 
     @IBAction func changeDirectory(_ sender: Any) {
@@ -39,6 +42,14 @@ class MainWindowController: NSWindowController, DirectoryReaderOutput {
     func display(notes: [Note]) {
         notesViewController.display(notes: notes)
         conversionViewController.display(notes: notes)
+    }
+
+    func displayProgress(current: Int, total: Int) {
+        print(current, "/", total)
+    }
+
+    func finishConversion() {
+
     }
 }
 

@@ -27,6 +27,7 @@
 		50C4F130205BF4F100A75FB1 /* Collection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F12F205BF4F100A75FB1 /* Collection+safeSubscript.swift */; };
 		50C4F132205BF5B700A75FB1 /* NoteTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F131205BF5B700A75FB1 /* NoteTableCellView.swift */; };
 		50C4F134205BFE6F00A75FB1 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */; };
+		50C4F139205C0D0100A75FB1 /* HashtagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F138205C0D0100A75FB1 /* HashtagConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		50C4F12F205BF4F100A75FB1 /* Collection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safeSubscript.swift"; sourceTree = "<group>"; };
 		50C4F131205BF5B700A75FB1 /* NoteTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableCellView.swift; sourceTree = "<group>"; };
 		50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
+		50C4F138205C0D0100A75FB1 /* HashtagConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				50C4F121205BB7AB00A75FB1 /* NoteFactory.swift */,
 				50C4F11F205BB53E00A75FB1 /* DirectoryLister.swift */,
 				50C4F11B205BB4E100A75FB1 /* FileExistenceChecker.swift */,
+				50C4F138205C0D0100A75FB1 /* HashtagConverter.swift */,
 			);
 			path = "Application Services";
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			files = (
 				50C4F11E205BB4FD00A75FB1 /* FileManager+FileExistenceChecker.swift in Sources */,
 				50C4F132205BF5B700A75FB1 /* NoteTableCellView.swift in Sources */,
+				50C4F139205C0D0100A75FB1 /* HashtagConverter.swift in Sources */,
 				50C4F118205BB2F300A75FB1 /* DirectoryReader.swift in Sources */,
 				50C4F122205BB7AB00A75FB1 /* NoteFactory.swift in Sources */,
 				50C4F10B205BAD9200A75FB1 /* MainWindowController.swift in Sources */,

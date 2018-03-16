@@ -71,6 +71,8 @@
 		50C4F138205C0D0100A75FB1 /* HashtagConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagConverter.swift; sourceTree = "<group>"; };
 		50C4F13A205C132900A75FB1 /* ConversionProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionProgressViewController.swift; sourceTree = "<group>"; };
 		50C4F13C205C1F7200A75FB1 /* StringLineSplitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLineSplitTests.swift; sourceTree = "<group>"; };
+		50C4F13E205C246000A75FB1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		50C4F13F205C246000A75FB1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,8 @@
 		50C4F0DF205BABDB00A75FB1 = {
 			isa = PBXGroup;
 			children = (
+				50C4F13E205C246000A75FB1 /* README.md */,
+				50C4F13F205C246000A75FB1 /* LICENSE */,
 				50C4F0EA205BABDB00A75FB1 /* TagConverter */,
 				50C4F0FB205BABDB00A75FB1 /* TagConverterTests */,
 				50C4F0E9205BABDB00A75FB1 /* Products */,

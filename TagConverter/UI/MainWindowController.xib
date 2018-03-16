@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -177,9 +178,9 @@
                         <rect key="frame" x="373" y="59" width="19" height="27"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="jCK-0y-O4a"/>
                         <connections>
+                            <binding destination="DnM-TO-D5H" name="value" keyPath="self.lineNumber" previousBinding="QOJ-MX-0iL" id="iTa-oj-mMy"/>
                             <binding destination="tDd-Go-vk7" name="maxValue" keyPath="self.maximum" id="0Vs-zn-4s8"/>
                             <binding destination="tDd-Go-vk7" name="minValue" keyPath="self.minimum" previousBinding="0Vs-zn-4s8" id="QOJ-MX-0iL"/>
-                            <binding destination="DnM-TO-D5H" name="value" keyPath="self.lineNumber" previousBinding="QOJ-MX-0iL" id="iTa-oj-mMy"/>
                         </connections>
                     </stepper>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bJw-Ms-ac2">
@@ -208,6 +209,16 @@
                             <action selector="convert:" target="DnM-TO-D5H" id="Elt-Jv-sJZ"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aa6-fp-uds">
+                        <rect key="frame" x="161" y="559" width="173" height="18"/>
+                        <buttonCell key="cell" type="check" title="Only show files with tags" bezelStyle="regularSquare" imagePosition="left" inset="2" id="RUr-R3-3UC">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="changeShowTaggedFiles:" target="afq-H4-e9W" id="OiN-Pp-02z"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yLl-gP-vf5" firstAttribute="leading" secondItem="0Do-OY-Yay" secondAttribute="leading" constant="20" id="5gI-Ec-dO0"/>
@@ -219,6 +230,8 @@
                     <constraint firstItem="OD9-0N-Rfi" firstAttribute="top" secondItem="Hu7-Ra-YtJ" secondAttribute="bottom" constant="20" id="OdA-Zg-LbS"/>
                     <constraint firstItem="HQW-LA-wmg" firstAttribute="leading" secondItem="SHo-tn-Bfd" secondAttribute="leading" id="UqF-Zs-Koc"/>
                     <constraint firstItem="bJw-Ms-ac2" firstAttribute="baseline" secondItem="HQW-LA-wmg" secondAttribute="baseline" id="Wud-8h-nEJ"/>
+                    <constraint firstItem="aa6-fp-uds" firstAttribute="leading" secondItem="Hu7-Ra-YtJ" secondAttribute="trailing" constant="8" id="Zzi-7f-q9m"/>
+                    <constraint firstItem="aa6-fp-uds" firstAttribute="baseline" secondItem="Hu7-Ra-YtJ" secondAttribute="baseline" id="bUw-bO-dEg"/>
                     <constraint firstItem="imP-2s-EZu" firstAttribute="centerY" secondItem="bJw-Ms-ac2" secondAttribute="centerY" id="bcB-V2-bPI"/>
                     <constraint firstItem="OD9-0N-Rfi" firstAttribute="leading" secondItem="0Do-OY-Yay" secondAttribute="leading" constant="-1" id="dST-Lt-I6f"/>
                     <constraint firstItem="SHo-tn-Bfd" firstAttribute="leading" secondItem="yLl-gP-vf5" secondAttribute="leading" id="f3s-Au-mah"/>
@@ -241,6 +254,7 @@
         </window>
         <customObject id="afq-H4-e9W" customClass="NotesViewController" customModule="TagConverter" customModuleProvider="target">
             <connections>
+                <outlet property="showTaggedFilesCheckbox" destination="aa6-fp-uds" id="m9k-sW-xUy"/>
                 <outlet property="tableView" destination="66q-t5-YxH" id="4lZ-tH-nWU"/>
                 <outlet property="view" destination="OD9-0N-Rfi" id="eRy-jd-tmP"/>
             </connections>

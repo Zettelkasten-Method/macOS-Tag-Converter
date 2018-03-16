@@ -5,31 +5,62 @@ import Cocoa
 class NotesViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var showTaggedFilesCheckbox: NSButton!
 
-    private var notes: [Note] = [] {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    // MARK: Model
+
+    func display(notes: [Note]) {
+        self.allNotes = notes
+    }
+
+    /// All model values.
+    private var allNotes: [Note] = [] {
+        didSet {
+            filterTaggedNotesIfNeeded()
+        }
+    }
+
+    /// Filtered model values.
+    private var displayedNotes: [Note] = [] {
         didSet {
             guard isViewLoaded else { return }
             tableView.reloadData()
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var isShowingTaggedFiles: Bool = false {
+        didSet {
+            filterTaggedNotesIfNeeded()
+        }
     }
 
-    func display(notes: [Note]) {
-        self.notes = notes
+    private func filterTaggedNotesIfNeeded() {
+        guard isShowingTaggedFiles else {
+            displayedNotes = allNotes
+            return
+        }
+
+        displayedNotes = allNotes.filter { $0.hasTags }
     }
+
+    @IBAction func changeShowTaggedFiles(_ sender: Any) {
+        self.isShowingTaggedFiles = (showTaggedFilesCheckbox.state == .on)
+    }
+
 
     // MARK: Table View Population
 
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return notes.count
+        return displayedNotes.count
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
 
-        guard let note = notes[safe: row] else { return nil }
+        guard let note = displayedNotes[safe: row] else { return nil }
         guard let cellView = noteTableCellView(tableView: tableView, tableColumn: tableColumn) else { return nil }
 
         cellView.display(note: note)
@@ -38,7 +69,7 @@ class NotesViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
     }
 
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        return notes[safe: row]?.hasTags ?? false
+        return displayedNotes[safe: row]?.hasTags ?? false
     }
 
     private func noteTableCellView(tableView: NSTableView, tableColumn: NSTableColumn?) -> NoteTableCellView? {

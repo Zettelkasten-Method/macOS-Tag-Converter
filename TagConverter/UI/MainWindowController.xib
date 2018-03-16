@@ -278,41 +278,84 @@
         <window title="Progress Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="q74-Zk-U1o">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="163" y="199" width="480" height="43"/>
+            <rect key="contentRect" x="163" y="199" width="480" height="271"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="ML8-rS-f4F">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="83"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="271"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="qty-UF-IYa">
-                        <rect key="frame" x="20" y="44" width="440" height="20"/>
+                        <rect key="frame" x="20" y="232" width="440" height="20"/>
                     </progressIndicator>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A2W-gf-gnn">
-                        <rect key="frame" x="173" y="20" width="134" height="17"/>
+                        <rect key="frame" x="173" y="208" width="134" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Processing 0 / 0 Files" id="XAG-gA-fjW">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUp-Jq-7Hf">
+                        <rect key="frame" x="-1" y="61" width="482" height="133"/>
+                        <clipView key="contentView" id="weB-Hw-5hY">
+                            <rect key="frame" x="1" y="1" width="480" height="131"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="eGW-uW-Giq">
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="131"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="480" height="131"/>
+                                    <size key="maxSize" width="480" height="10000000"/>
+                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="8q5-Zk-eKF">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="kdk-gn-H3T">
+                            <rect key="frame" x="465" y="1" width="16" height="131"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UkR-3B-S2r">
+                        <rect key="frame" x="391" y="13" width="75" height="32"/>
+                        <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Pjf-eK-Iax">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="close:" target="iqI-WM-s2X" id="f7s-dd-Cxu"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="UkR-3B-S2r" secondAttribute="trailing" constant="20" id="0cH-8h-0f0"/>
+                    <constraint firstItem="HUp-Jq-7Hf" firstAttribute="top" secondItem="A2W-gf-gnn" secondAttribute="bottom" constant="14" id="2l0-Ic-a59"/>
                     <constraint firstAttribute="trailing" secondItem="qty-UF-IYa" secondAttribute="trailing" constant="20" id="8fs-fD-3uT"/>
                     <constraint firstItem="A2W-gf-gnn" firstAttribute="top" secondItem="qty-UF-IYa" secondAttribute="bottom" constant="8" id="F41-le-uLf"/>
                     <constraint firstItem="qty-UF-IYa" firstAttribute="leading" secondItem="ML8-rS-f4F" secondAttribute="leading" constant="20" id="Fz0-fD-jsr"/>
+                    <constraint firstAttribute="trailing" secondItem="HUp-Jq-7Hf" secondAttribute="trailing" constant="-1" id="PLF-TB-siH"/>
                     <constraint firstItem="A2W-gf-gnn" firstAttribute="centerX" secondItem="ML8-rS-f4F" secondAttribute="centerX" id="UtH-75-iO5"/>
-                    <constraint firstAttribute="bottom" secondItem="A2W-gf-gnn" secondAttribute="bottom" constant="20" id="g6A-f6-yaP"/>
+                    <constraint firstAttribute="bottom" secondItem="UkR-3B-S2r" secondAttribute="bottom" constant="20" id="Vx3-5M-tWf"/>
+                    <constraint firstItem="UkR-3B-S2r" firstAttribute="top" secondItem="HUp-Jq-7Hf" secondAttribute="bottom" constant="20" id="dbj-Do-7gL"/>
                     <constraint firstItem="qty-UF-IYa" firstAttribute="top" secondItem="ML8-rS-f4F" secondAttribute="top" constant="20" id="iFI-Hd-Dbi"/>
+                    <constraint firstItem="HUp-Jq-7Hf" firstAttribute="leading" secondItem="ML8-rS-f4F" secondAttribute="leading" constant="-1" id="uXB-Lu-3IE"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="-431" y="-333"/>
+            <point key="canvasLocation" x="-431" y="-219.5"/>
         </window>
         <customObject id="iqI-WM-s2X" customClass="ConversionProgressViewController" customModule="TagConverter" customModuleProvider="target">
             <connections>
+                <outlet property="closeButton" destination="UkR-3B-S2r" id="XNH-wQ-KyN"/>
                 <outlet property="hostingWindow" destination="Jra-ab-tp5" id="t4c-JZ-9WU"/>
                 <outlet property="progressIndicator" destination="qty-UF-IYa" id="SZP-6Q-ptH"/>
                 <outlet property="progressLabel" destination="A2W-gf-gnn" id="3Ga-aZ-o3l"/>
                 <outlet property="progressWindow" destination="q74-Zk-U1o" id="Z9S-zm-q73"/>
+                <outlet property="resultTextView" destination="eGW-uW-Giq" id="ku8-cc-0E9"/>
             </connections>
         </customObject>
     </objects>

@@ -27,6 +27,16 @@ class ConversionProgressViewController: NSViewController, HashtagConverterOutput
     func displayProgress(current: Int, total: Int) {
 
         isDisplayingProgress = true
+        closeButton.isEnabled = false
+
+        updateProgress(current: current, total: total)
+    }
+
+    /// Cache used to display the final state.
+    private var lastTotal = 0
+
+    private func updateProgress(current: Int, total: Int) {
+        lastTotal = total
 
         progressIndicator.maxValue = Double(total)
         progressIndicator.doubleValue = Double(current)
@@ -34,8 +44,23 @@ class ConversionProgressViewController: NSViewController, HashtagConverterOutput
         progressLabel.stringValue = "Processing \(current) / \(total) Files"
     }
 
+    @IBOutlet var resultTextView: NSTextView!
+
     func finishConversion(errors: [Error]) {
 
+        updateProgress(current: lastTotal, total: lastTotal)
+        
+        resultTextView.string = errors
+            .map(String.init(describing:))
+            .joined(separator: "\n\n")
+
+        closeButton.isEnabled = true
+        progressWindow.makeFirstResponder(closeButton)
+    }
+
+    @IBOutlet weak var closeButton: NSButton!
+
+    @IBAction func close(_ sender: Any) {
         isDisplayingProgress = false
     }
 }

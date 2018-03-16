@@ -4,17 +4,49 @@ import Foundation
 
 protocol DirectoryReaderOutput {
     func display(path: String)
+    func display(notes: [Note])
+}
+
+struct Note: Equatable {
+    let url: URL
+    let filename: String
+    let tags: [String]
+}
+
+func ==(lhs: Note, rhs: Note) -> Bool {
+
+    return lhs.url == rhs.url
+        && lhs.filename == rhs.filename
+        && lhs.tags == rhs.tags
 }
 
 class DirectoryReader {
 
+    let lister: DirectoryLister
+    let noteFactory: NoteFactory
     let output: DirectoryReaderOutput
+    let errorHandler: (Error) -> Void
 
-    init(output: DirectoryReaderOutput) {
+    init(
+        lister: DirectoryLister = FileManager.default,
+        noteFactory: NoteFactory = NoteFactory(),
+        errorHandler: @escaping (Error) -> Void,
+        output: DirectoryReaderOutput) {
+
+        self.lister = lister
+        self.noteFactory = noteFactory
+        self.errorHandler = errorHandler
         self.output = output
     }
 
     func process(directoryURL: URL) {
-        output.display(path: directoryURL.path)
+        do {
+            let fileURLs = try lister.filesInDirectory(at: directoryURL)
+            let notes = fileURLs.map(noteFactory.note(url:))
+            output.display(path: directoryURL.path)
+            output.display(notes: notes)
+        } catch {
+            errorHandler(error)
+        }
     }
 }

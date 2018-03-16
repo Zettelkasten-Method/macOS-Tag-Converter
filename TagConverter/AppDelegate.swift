@@ -6,7 +6,11 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     lazy var windowController: MainWindowController = MainWindowController()
-    lazy var directoryReader: DirectoryReader = DirectoryReader(output: self.windowController)
+    lazy var directoryReader: DirectoryReader = {
+        return DirectoryReader(
+            errorHandler: { NSAlert(error: $0).runModal() },
+            output: self.windowController)
+    }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 

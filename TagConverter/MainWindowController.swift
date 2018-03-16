@@ -27,6 +27,10 @@ class MainWindowController: NSWindowController, DirectoryReaderOutput {
         directoryPathLabel.isHidden = false
         directoryPathLabel.stringValue = path
     }
+
+    func display(notes: [Note]) {
+        
+    }
 }
 
 func userPickedDirectory() -> URL? {

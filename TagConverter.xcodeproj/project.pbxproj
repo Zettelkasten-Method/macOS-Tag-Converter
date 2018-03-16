@@ -10,10 +10,19 @@
 		50C4F0EC205BABDB00A75FB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F0EB205BABDB00A75FB1 /* AppDelegate.swift */; };
 		50C4F0EE205BABDB00A75FB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C4F0ED205BABDB00A75FB1 /* Assets.xcassets */; };
 		50C4F0F1205BABDB00A75FB1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4F0EF205BABDB00A75FB1 /* MainMenu.xib */; };
-		50C4F0FD205BABDB00A75FB1 /* TagConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F0FC205BABDB00A75FB1 /* TagConverterTests.swift */; };
 		50C4F10B205BAD9200A75FB1 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F109205BAD9200A75FB1 /* MainWindowController.swift */; };
 		50C4F10C205BAD9200A75FB1 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4F10A205BAD9200A75FB1 /* MainWindowController.xib */; };
 		50C4F118205BB2F300A75FB1 /* DirectoryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F117205BB2F300A75FB1 /* DirectoryReader.swift */; };
+		50C4F11A205BB4A700A75FB1 /* FileManager+DirectoryLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F119205BB4A700A75FB1 /* FileManager+DirectoryLister.swift */; };
+		50C4F11C205BB4E100A75FB1 /* FileExistenceChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F11B205BB4E100A75FB1 /* FileExistenceChecker.swift */; };
+		50C4F11E205BB4FD00A75FB1 /* FileManager+FileExistenceChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F11D205BB4FD00A75FB1 /* FileManager+FileExistenceChecker.swift */; };
+		50C4F120205BB53E00A75FB1 /* DirectoryLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F11F205BB53E00A75FB1 /* DirectoryLister.swift */; };
+		50C4F122205BB7AB00A75FB1 /* NoteFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F121205BB7AB00A75FB1 /* NoteFactory.swift */; };
+		50C4F124205BB84F00A75FB1 /* FileManager+DirectoryListerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F123205BB84F00A75FB1 /* FileManager+DirectoryListerTests.swift */; };
+		50C4F126205BB87C00A75FB1 /* TemporaryFilesHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F125205BB87C00A75FB1 /* TemporaryFilesHelpers.swift */; };
+		50C4F128205BC00600A75FB1 /* ErrorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F127205BC00600A75FB1 /* ErrorHelpers.swift */; };
+		50C4F12A205BC04F00A75FB1 /* FileManager+ExistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F129205BC04F00A75FB1 /* FileManager+ExistenceTests.swift */; };
+		50C4F12C205BC07000A75FB1 /* DirectoryReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F12B205BC07000A75FB1 /* DirectoryReaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +43,20 @@
 		50C4F0F2205BABDB00A75FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C4F0F3205BABDB00A75FB1 /* TagConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TagConverter.entitlements; sourceTree = "<group>"; };
 		50C4F0F8205BABDB00A75FB1 /* TagConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TagConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50C4F0FC205BABDB00A75FB1 /* TagConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagConverterTests.swift; sourceTree = "<group>"; };
 		50C4F0FE205BABDB00A75FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C4F109205BAD9200A75FB1 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		50C4F10A205BAD9200A75FB1 /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 		50C4F117205BB2F300A75FB1 /* DirectoryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryReader.swift; sourceTree = "<group>"; };
+		50C4F119205BB4A700A75FB1 /* FileManager+DirectoryLister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+DirectoryLister.swift"; sourceTree = "<group>"; };
+		50C4F11B205BB4E100A75FB1 /* FileExistenceChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExistenceChecker.swift; sourceTree = "<group>"; };
+		50C4F11D205BB4FD00A75FB1 /* FileManager+FileExistenceChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+FileExistenceChecker.swift"; sourceTree = "<group>"; };
+		50C4F11F205BB53E00A75FB1 /* DirectoryLister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryLister.swift; sourceTree = "<group>"; };
+		50C4F121205BB7AB00A75FB1 /* NoteFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFactory.swift; sourceTree = "<group>"; };
+		50C4F123205BB84F00A75FB1 /* FileManager+DirectoryListerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+DirectoryListerTests.swift"; sourceTree = "<group>"; };
+		50C4F125205BB87C00A75FB1 /* TemporaryFilesHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryFilesHelpers.swift; sourceTree = "<group>"; };
+		50C4F127205BC00600A75FB1 /* ErrorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHelpers.swift; sourceTree = "<group>"; };
+		50C4F129205BC04F00A75FB1 /* FileManager+ExistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+ExistenceTests.swift"; sourceTree = "<group>"; };
+		50C4F12B205BC07000A75FB1 /* DirectoryReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryReaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +101,11 @@
 				50C4F0EB205BABDB00A75FB1 /* AppDelegate.swift */,
 				50C4F109205BAD9200A75FB1 /* MainWindowController.swift */,
 				50C4F117205BB2F300A75FB1 /* DirectoryReader.swift */,
+				50C4F121205BB7AB00A75FB1 /* NoteFactory.swift */,
+				50C4F11F205BB53E00A75FB1 /* DirectoryLister.swift */,
+				50C4F11B205BB4E100A75FB1 /* FileExistenceChecker.swift */,
+				50C4F119205BB4A700A75FB1 /* FileManager+DirectoryLister.swift */,
+				50C4F11D205BB4FD00A75FB1 /* FileManager+FileExistenceChecker.swift */,
 				50C4F10A205BAD9200A75FB1 /* MainWindowController.xib */,
 				50C4F0ED205BABDB00A75FB1 /* Assets.xcassets */,
 				50C4F0EF205BABDB00A75FB1 /* MainMenu.xib */,
@@ -95,7 +118,11 @@
 		50C4F0FB205BABDB00A75FB1 /* TagConverterTests */ = {
 			isa = PBXGroup;
 			children = (
-				50C4F0FC205BABDB00A75FB1 /* TagConverterTests.swift */,
+				50C4F12B205BC07000A75FB1 /* DirectoryReaderTests.swift */,
+				50C4F123205BB84F00A75FB1 /* FileManager+DirectoryListerTests.swift */,
+				50C4F129205BC04F00A75FB1 /* FileManager+ExistenceTests.swift */,
+				50C4F125205BB87C00A75FB1 /* TemporaryFilesHelpers.swift */,
+				50C4F127205BC00600A75FB1 /* ErrorHelpers.swift */,
 				50C4F0FE205BABDB00A75FB1 /* Info.plist */,
 			);
 			path = TagConverterTests;
@@ -209,8 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C4F11E205BB4FD00A75FB1 /* FileManager+FileExistenceChecker.swift in Sources */,
 				50C4F118205BB2F300A75FB1 /* DirectoryReader.swift in Sources */,
+				50C4F122205BB7AB00A75FB1 /* NoteFactory.swift in Sources */,
 				50C4F10B205BAD9200A75FB1 /* MainWindowController.swift in Sources */,
+				50C4F120205BB53E00A75FB1 /* DirectoryLister.swift in Sources */,
+				50C4F11C205BB4E100A75FB1 /* FileExistenceChecker.swift in Sources */,
+				50C4F11A205BB4A700A75FB1 /* FileManager+DirectoryLister.swift in Sources */,
 				50C4F0EC205BABDB00A75FB1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C4F0FD205BABDB00A75FB1 /* TagConverterTests.swift in Sources */,
+				50C4F12C205BC07000A75FB1 /* DirectoryReaderTests.swift in Sources */,
+				50C4F12A205BC04F00A75FB1 /* FileManager+ExistenceTests.swift in Sources */,
+				50C4F126205BB87C00A75FB1 /* TemporaryFilesHelpers.swift in Sources */,
+				50C4F124205BB84F00A75FB1 /* FileManager+DirectoryListerTests.swift in Sources */,
+				50C4F128205BC00600A75FB1 /* ErrorHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

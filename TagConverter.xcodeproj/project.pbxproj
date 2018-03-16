@@ -29,6 +29,7 @@
 		50C4F134205BFE6F00A75FB1 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */; };
 		50C4F139205C0D0100A75FB1 /* HashtagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F138205C0D0100A75FB1 /* HashtagConverter.swift */; };
 		50C4F13B205C132900A75FB1 /* ConversionProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F13A205C132900A75FB1 /* ConversionProgressViewController.swift */; };
+		50C4F13D205C1F7200A75FB1 /* StringLineSplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F13C205C1F7200A75FB1 /* StringLineSplitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 		50C4F138205C0D0100A75FB1 /* HashtagConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagConverter.swift; sourceTree = "<group>"; };
 		50C4F13A205C132900A75FB1 /* ConversionProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionProgressViewController.swift; sourceTree = "<group>"; };
+		50C4F13C205C1F7200A75FB1 /* StringLineSplitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLineSplitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				50C4F12B205BC07000A75FB1 /* DirectoryReaderTests.swift */,
 				50C4F123205BB84F00A75FB1 /* FileManager+DirectoryListerTests.swift */,
 				50C4F129205BC04F00A75FB1 /* FileManager+ExistenceTests.swift */,
+				50C4F13C205C1F7200A75FB1 /* StringLineSplitTests.swift */,
 				50C4F125205BB87C00A75FB1 /* TemporaryFilesHelpers.swift */,
 				50C4F127205BC00600A75FB1 /* ErrorHelpers.swift */,
 				50C4F0FE205BABDB00A75FB1 /* Info.plist */,
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C4F12C205BC07000A75FB1 /* DirectoryReaderTests.swift in Sources */,
+				50C4F13D205C1F7200A75FB1 /* StringLineSplitTests.swift in Sources */,
 				50C4F12A205BC04F00A75FB1 /* FileManager+ExistenceTests.swift in Sources */,
 				50C4F126205BB87C00A75FB1 /* TemporaryFilesHelpers.swift in Sources */,
 				50C4F124205BB84F00A75FB1 /* FileManager+DirectoryListerTests.swift in Sources */,

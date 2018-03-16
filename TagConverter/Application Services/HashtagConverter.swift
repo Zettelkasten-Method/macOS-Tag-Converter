@@ -53,3 +53,27 @@ class NoteConverter {
 
     }
 }
+
+func split(string: String, lineNumber: Int) -> (String, String) {
+
+    var top: [String] = []
+    var bottom: [String] = []
+
+    var i = 0
+    var collectToTop = true
+    string.enumerateLines { (line, _) in
+        if i == lineNumber { collectToTop = false }
+        if collectToTop {
+            top.append(line)
+        } else {
+            bottom.append(line)
+        }
+        i += 1
+    }
+
+    // Append empty line if there was a split in order to end the top with a `\n`
+    if top.isNotEmpty && bottom.isNotEmpty { top.append("") }
+
+    return (top.joined(separator: "\n"),
+            bottom.joined(separator: "\n"))
+}

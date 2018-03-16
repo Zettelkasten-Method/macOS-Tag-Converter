@@ -4,7 +4,7 @@ import Foundation
 
 protocol HashtagConverterOutput {
     func displayProgress(current: Int, total: Int)
-    func finishConversion()
+    func finishConversion(errors: [Error])
 }
 
 struct Conversion {
@@ -34,17 +34,22 @@ class HashtagConverter {
         let total = conversion.notes.count
 
         DispatchQueue.global(qos: .utility).async {
+            var errors: [Error] = []
             for (index, note) in conversion.notes.enumerated() {
-                self.noteConverter.process(note: note, conversion: conversion)
+                do {
+                    try self.noteConverter.process(note: note, conversion: conversion)
+                } catch {
+                    errors.append(error)
+                }
                 DispatchQueue.main.async { self.output.displayProgress(current: index, total: total) }
             }
-            DispatchQueue.main.async { self.output.finishConversion() }
+            DispatchQueue.main.async { self.output.finishConversion(errors: errors) }
         }
     }
 }
 
 class NoteConverter {
-    func process(note: Note, conversion: Conversion) {
+    func process(note: Note, conversion: Conversion) throws {
 
     }
 }

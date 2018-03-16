@@ -6,7 +6,8 @@ class MainWindowController: NSWindowController, DirectoryReaderOutput, HashtagCo
 
     @IBOutlet weak var notesViewController: NotesViewController!
     @IBOutlet weak var conversionViewController: ConversionViewController!
-    
+    @IBOutlet weak var conversionProgressViewController: ConversionProgressViewController!
+
     convenience init() {
         self.init(windowNibName: .mainWindow)
     }
@@ -45,11 +46,11 @@ class MainWindowController: NSWindowController, DirectoryReaderOutput, HashtagCo
     }
 
     func displayProgress(current: Int, total: Int) {
-        print(current, "/", total)
+        conversionProgressViewController.displayProgress(current: current, total: total)
     }
 
-    func finishConversion() {
-
+    func finishConversion(errors: [Error]) {
+        conversionProgressViewController.finishConversion(errors: errors)
     }
 }
 

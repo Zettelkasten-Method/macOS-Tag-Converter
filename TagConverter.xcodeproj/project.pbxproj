@@ -28,6 +28,7 @@
 		50C4F132205BF5B700A75FB1 /* NoteTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F131205BF5B700A75FB1 /* NoteTableCellView.swift */; };
 		50C4F134205BFE6F00A75FB1 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */; };
 		50C4F139205C0D0100A75FB1 /* HashtagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F138205C0D0100A75FB1 /* HashtagConverter.swift */; };
+		50C4F13B205C132900A75FB1 /* ConversionProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F13A205C132900A75FB1 /* ConversionProgressViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		50C4F131205BF5B700A75FB1 /* NoteTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableCellView.swift; sourceTree = "<group>"; };
 		50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 		50C4F138205C0D0100A75FB1 /* HashtagConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagConverter.swift; sourceTree = "<group>"; };
+		50C4F13A205C132900A75FB1 /* ConversionProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionProgressViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				50C4F109205BAD9200A75FB1 /* MainWindowController.swift */,
 				50C4F10A205BAD9200A75FB1 /* MainWindowController.xib */,
 				50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */,
+				50C4F13A205C132900A75FB1 /* ConversionProgressViewController.swift */,
 				50C4F12D205BF2BC00A75FB1 /* NotesViewController.swift */,
 				50C4F131205BF5B700A75FB1 /* NoteTableCellView.swift */,
 				50C4F0ED205BABDB00A75FB1 /* Assets.xcassets */,
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50C4F11E205BB4FD00A75FB1 /* FileManager+FileExistenceChecker.swift in Sources */,
+				50C4F13B205C132900A75FB1 /* ConversionProgressViewController.swift in Sources */,
 				50C4F132205BF5B700A75FB1 /* NoteTableCellView.swift in Sources */,
 				50C4F139205C0D0100A75FB1 /* HashtagConverter.swift in Sources */,
 				50C4F118205BB2F300A75FB1 /* DirectoryReader.swift in Sources */,

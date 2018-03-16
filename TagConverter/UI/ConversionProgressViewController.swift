@@ -50,9 +50,15 @@ class ConversionProgressViewController: NSViewController, HashtagConverterOutput
 
         updateProgress(current: lastTotal, total: lastTotal)
         
-        resultTextView.string = errors
-            .map(String.init(describing:))
-            .joined(separator: "\n\n")
+        resultTextView.string = {
+            if errors.isNotEmpty {
+                return errors
+                    .map(String.init(describing:))
+                    .joined(separator: "\n\n")
+            } else {
+                return "Everything worked like a charm."
+            }
+        }()
 
         closeButton.isEnabled = true
         progressWindow.makeFirstResponder(closeButton)

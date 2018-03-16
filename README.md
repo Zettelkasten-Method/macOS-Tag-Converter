@@ -6,9 +6,10 @@ This tool will take a directory of files, scan for Finder tags, and then allow y
 
 Can be used to make tags from DEVONthink or nvALT work with [_The Archive_](https://zettelkasten.de/the-archive/) and similar plain-text editors, like Sublime Text 3.
 
+[![Download latest release](assets/download.png "Download latest release")](https://github.com/Zettelkasten-Method/macOS-Tag-Converter/releases/latest)
+
 - **Warning:** Will perform changes in-place. Keep a backup of the original if in doubt!
 - Requires macOS 10.11 or later.
-- [Download latest release](https://github.com/Zettelkasten-Method/macOS-Tag-Converter/releases/latest)
 
 ![](assets/screenshot.png)
 

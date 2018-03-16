@@ -26,6 +26,7 @@
 		50C4F12E205BF2BC00A75FB1 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F12D205BF2BC00A75FB1 /* NotesViewController.swift */; };
 		50C4F130205BF4F100A75FB1 /* Collection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F12F205BF4F100A75FB1 /* Collection+safeSubscript.swift */; };
 		50C4F132205BF5B700A75FB1 /* NoteTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F131205BF5B700A75FB1 /* NoteTableCellView.swift */; };
+		50C4F134205BFE6F00A75FB1 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		50C4F12D205BF2BC00A75FB1 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		50C4F12F205BF4F100A75FB1 /* Collection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safeSubscript.swift"; sourceTree = "<group>"; };
 		50C4F131205BF5B700A75FB1 /* NoteTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableCellView.swift; sourceTree = "<group>"; };
+		50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				50C4F119205BB4A700A75FB1 /* FileManager+DirectoryLister.swift */,
 				50C4F11D205BB4FD00A75FB1 /* FileManager+FileExistenceChecker.swift */,
 				50C4F10A205BAD9200A75FB1 /* MainWindowController.xib */,
+				50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */,
 				50C4F12D205BF2BC00A75FB1 /* NotesViewController.swift */,
 				50C4F131205BF5B700A75FB1 /* NoteTableCellView.swift */,
 				50C4F0ED205BABDB00A75FB1 /* Assets.xcassets */,
@@ -255,6 +258,7 @@
 				50C4F130205BF4F100A75FB1 /* Collection+safeSubscript.swift in Sources */,
 				50C4F11C205BB4E100A75FB1 /* FileExistenceChecker.swift in Sources */,
 				50C4F11A205BB4A700A75FB1 /* FileManager+DirectoryLister.swift in Sources */,
+				50C4F134205BFE6F00A75FB1 /* ConversionViewController.swift in Sources */,
 				50C4F0EC205BABDB00A75FB1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,7 +38,7 @@ class NotesViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
     }
 
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        return notes[safe: row]?.tags.isNotEmpty ?? false
+        return notes[safe: row]?.hasTags ?? false
     }
 
     private func noteTableCellView(tableView: NSTableView, tableColumn: NSTableColumn?) -> NoteTableCellView? {

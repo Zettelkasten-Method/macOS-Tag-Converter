@@ -5,6 +5,7 @@ import Cocoa
 class MainWindowController: NSWindowController, DirectoryReaderOutput {
 
     @IBOutlet weak var notesViewController: NotesViewController!
+    @IBOutlet weak var conversionViewController: ConversionViewController!
     
     convenience init() {
         self.init(windowNibName: .mainWindow)
@@ -12,12 +13,17 @@ class MainWindowController: NSWindowController, DirectoryReaderOutput {
 
     override func windowDidLoad() {
         super.windowDidLoad()
+        window?.isMovableByWindowBackground = true
         directoryPathLabel.isHidden = true
     }
 
     @IBOutlet weak var directoryPathLabel: NSTextField!
     @IBOutlet weak var changeDirectoryButton: NSButton!
     var directoryPickerHandler: ((URL) -> Void)?
+    var conversionHandler: ((Conversion) -> Void)? {
+        get { return conversionViewController.conversionHandler }
+        set { conversionViewController.conversionHandler = newValue }
+    }
 
     @IBAction func changeDirectory(_ sender: Any) {
 
@@ -32,6 +38,7 @@ class MainWindowController: NSWindowController, DirectoryReaderOutput {
 
     func display(notes: [Note]) {
         notesViewController.display(notes: notes)
+        conversionViewController.display(notes: notes)
     }
 }
 

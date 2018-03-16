@@ -10,7 +10,7 @@ class NoteTableCellView: NSTableCellView {
     /// and colors the text view disabled when no tags are present.
     func display(note: Note) {
         self.note = note
-        self.textField?.textColor = note.tags.isEmpty ? NSColor.disabledControlTextColor : nil
+        self.textField?.textColor = note.hasTags ? nil : NSColor.disabledControlTextColor
     }
 }
 

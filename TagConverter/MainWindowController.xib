@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MainWindowController" customModule="TagConverter" customModuleProvider="target">
             <connections>
                 <outlet property="changeDirectoryButton" destination="Hu7-Ra-YtJ" id="XpZ-og-GZr"/>
+                <outlet property="conversionViewController" destination="DnM-TO-D5H" id="EfJ-4Z-hNu"/>
                 <outlet property="directoryPathLabel" destination="F1G-UE-sJH" id="saQ-49-Tt6"/>
                 <outlet property="notesViewController" destination="afq-H4-e9W" id="azK-CZ-mYf"/>
                 <outlet property="window" destination="Jra-ab-tp5" id="Z8j-bF-6ao"/>
@@ -18,14 +19,14 @@
         <window title="Tag Converter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="Jra-ab-tp5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="515"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="623"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="0Do-OY-Yay">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="515"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="623"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hu7-Ra-YtJ">
-                        <rect key="frame" x="14" y="442" width="147" height="32"/>
+                        <rect key="frame" x="14" y="550" width="147" height="32"/>
                         <buttonCell key="cell" type="push" title="Change Directory" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sMh-aA-ylv">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -35,13 +36,13 @@
                         </connections>
                     </button>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OD9-0N-Rfi">
-                        <rect key="frame" x="-1" y="101" width="482" height="328"/>
+                        <rect key="frame" x="-1" y="139" width="482" height="398"/>
                         <clipView key="contentView" id="tXQ-7a-Eb6">
-                            <rect key="frame" x="1" y="0.0" width="480" height="327"/>
+                            <rect key="frame" x="1" y="0.0" width="480" height="397"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" headerView="USv-b6-1X6" viewBased="YES" id="66q-t5-YxH">
-                                    <rect key="frame" x="0.0" y="0.0" width="480" height="304"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="374"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -80,7 +81,7 @@
                                                 </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
-                                        <tableColumn identifier="Tags" width="64" minWidth="10" maxWidth="3.4028234663852886e+38" id="6il-3J-ynQ">
+                                        <tableColumn identifier="Tags" width="174" minWidth="10" maxWidth="3.4028234663852886e+38" id="6il-3J-ynQ">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Tags">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -94,11 +95,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView identifier="TagsCell" id="oai-QH-Edv" customClass="TagsTableCellView" customModule="TagConverter" customModuleProvider="target">
-                                                    <rect key="frame" x="304" y="1" width="64" height="17"/>
+                                                    <rect key="frame" x="304" y="1" width="174" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1U-Mg-fcc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="174" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="HxV-zq-kWA">
                                                                 <font key="font" metaFont="system"/>
@@ -135,21 +136,98 @@
                         </tableHeaderView>
                     </scrollView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F1G-UE-sJH">
-                        <rect key="frame" x="18" y="478" width="444" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/path/to/success" id="pr9-78-39a">
+                        <rect key="frame" x="18" y="586" width="444" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" title="/path/to/success" id="pr9-78-39a">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yLl-gP-vf5">
+                        <rect key="frame" x="18" y="115" width="275" height="18"/>
+                        <buttonCell key="cell" type="check" title="Insert only missing hashtags into the note" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="8jA-gK-reL">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="changeInsertMissingHashtagsOnly:" target="DnM-TO-D5H" id="E20-zF-0a6"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SHo-tn-Bfd">
+                        <rect key="frame" x="19" y="86" width="284" height="18"/>
+                        <buttonCell key="cell" type="radio" title="Append hashtags to the very end of the file" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="LlC-pW-xL6">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="changeHashtagPlacement:" target="DnM-TO-D5H" id="EOL-e0-dqt"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HQW-LA-wmg">
+                        <rect key="frame" x="19" y="64" width="310" height="18"/>
+                        <buttonCell key="cell" type="radio" title="Insert a line of hashtags at this line in every file:" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="lE0-I0-Yhu">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="changeHashtagPlacement:" target="DnM-TO-D5H" id="bFi-G3-Xb1"/>
+                        </connections>
+                    </button>
+                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="imP-2s-EZu">
+                        <rect key="frame" x="373" y="59" width="19" height="27"/>
+                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="jCK-0y-O4a"/>
+                        <connections>
+                            <binding destination="tDd-Go-vk7" name="maxValue" keyPath="self.maximum" id="0Vs-zn-4s8"/>
+                            <binding destination="tDd-Go-vk7" name="minValue" keyPath="self.minimum" previousBinding="0Vs-zn-4s8" id="QOJ-MX-0iL"/>
+                            <binding destination="DnM-TO-D5H" name="value" keyPath="self.lineNumber" previousBinding="QOJ-MX-0iL" id="iTa-oj-mMy"/>
+                        </connections>
+                    </stepper>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bJw-Ms-ac2">
+                        <rect key="frame" x="335" y="62" width="40" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="FMb-2T-efe"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="123" drawsBackground="YES" id="sXn-6Q-F24">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="DnM-TO-D5H" name="value" keyPath="self.lineNumber" id="pbK-dS-Jsk"/>
+                            <outlet property="formatter" destination="tDd-Go-vk7" id="yQH-ia-DIP"/>
+                            <outlet property="nextKeyView" destination="imP-2s-EZu" id="ZJD-i4-ffd"/>
+                        </connections>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cZS-nT-TMm">
+                        <rect key="frame" x="377" y="13" width="89" height="32"/>
+                        <buttonCell key="cell" type="push" title="Convert" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xqt-Qt-JZq">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="convert:" target="DnM-TO-D5H" id="Elt-Jv-sJZ"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="yLl-gP-vf5" firstAttribute="leading" secondItem="0Do-OY-Yay" secondAttribute="leading" constant="20" id="5gI-Ec-dO0"/>
+                    <constraint firstItem="HQW-LA-wmg" firstAttribute="top" secondItem="SHo-tn-Bfd" secondAttribute="bottom" constant="6" id="6PG-6z-pCJ"/>
                     <constraint firstAttribute="trailing" secondItem="F1G-UE-sJH" secondAttribute="trailing" constant="20" id="GtJ-ut-E5U"/>
+                    <constraint firstAttribute="trailing" secondItem="cZS-nT-TMm" secondAttribute="trailing" constant="20" id="Hqh-Qt-Wx5"/>
+                    <constraint firstAttribute="bottom" secondItem="cZS-nT-TMm" secondAttribute="bottom" constant="20" id="Lnf-u7-HUH"/>
+                    <constraint firstItem="yLl-gP-vf5" firstAttribute="top" secondItem="OD9-0N-Rfi" secondAttribute="bottom" constant="8" id="OAq-Qa-nWx"/>
                     <constraint firstItem="OD9-0N-Rfi" firstAttribute="top" secondItem="Hu7-Ra-YtJ" secondAttribute="bottom" constant="20" id="OdA-Zg-LbS"/>
+                    <constraint firstItem="HQW-LA-wmg" firstAttribute="leading" secondItem="SHo-tn-Bfd" secondAttribute="leading" id="UqF-Zs-Koc"/>
+                    <constraint firstItem="bJw-Ms-ac2" firstAttribute="baseline" secondItem="HQW-LA-wmg" secondAttribute="baseline" id="Wud-8h-nEJ"/>
+                    <constraint firstItem="imP-2s-EZu" firstAttribute="centerY" secondItem="bJw-Ms-ac2" secondAttribute="centerY" id="bcB-V2-bPI"/>
                     <constraint firstItem="OD9-0N-Rfi" firstAttribute="leading" secondItem="0Do-OY-Yay" secondAttribute="leading" constant="-1" id="dST-Lt-I6f"/>
-                    <constraint firstAttribute="bottom" secondItem="OD9-0N-Rfi" secondAttribute="bottom" constant="101" id="fCq-nf-ySt"/>
+                    <constraint firstItem="SHo-tn-Bfd" firstAttribute="leading" secondItem="yLl-gP-vf5" secondAttribute="leading" id="f3s-Au-mah"/>
+                    <constraint firstItem="SHo-tn-Bfd" firstAttribute="top" secondItem="yLl-gP-vf5" secondAttribute="bottom" constant="14" id="kp5-A8-fV2"/>
+                    <constraint firstItem="bJw-Ms-ac2" firstAttribute="leading" secondItem="HQW-LA-wmg" secondAttribute="trailing" constant="8" id="krK-qX-03u"/>
+                    <constraint firstItem="cZS-nT-TMm" firstAttribute="top" secondItem="HQW-LA-wmg" secondAttribute="bottom" constant="24" id="nar-b1-TwD"/>
                     <constraint firstItem="F1G-UE-sJH" firstAttribute="leading" secondItem="0Do-OY-Yay" secondAttribute="leading" constant="20" id="nlg-jn-cjL"/>
                     <constraint firstItem="Hu7-Ra-YtJ" firstAttribute="leading" secondItem="F1G-UE-sJH" secondAttribute="leading" id="qAL-md-FBD"/>
+                    <constraint firstItem="imP-2s-EZu" firstAttribute="leading" secondItem="bJw-Ms-ac2" secondAttribute="trailing" constant="1" id="qfK-Et-lu5"/>
                     <constraint firstAttribute="trailing" secondItem="OD9-0N-Rfi" secondAttribute="trailing" constant="-1" id="uh7-La-FfY"/>
                     <constraint firstItem="F1G-UE-sJH" firstAttribute="top" secondItem="0Do-OY-Yay" secondAttribute="top" constant="20" id="yfr-MH-baI"/>
                     <constraint firstItem="Hu7-Ra-YtJ" firstAttribute="top" secondItem="F1G-UE-sJH" secondAttribute="bottom" constant="8" id="z6N-CL-N73"/>
@@ -157,8 +235,9 @@
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="RrG-sQ-9Cz"/>
+                <outlet property="initialFirstResponder" destination="Hu7-Ra-YtJ" id="5Gf-iR-Mzx"/>
             </connections>
-            <point key="canvasLocation" x="139" y="-157.5"/>
+            <point key="canvasLocation" x="139" y="-103.5"/>
         </window>
         <customObject id="afq-H4-e9W" customClass="NotesViewController" customModule="TagConverter" customModuleProvider="target">
             <connections>
@@ -166,5 +245,18 @@
                 <outlet property="view" destination="OD9-0N-Rfi" id="eRy-jd-tmP"/>
             </connections>
         </customObject>
+        <customObject id="DnM-TO-D5H" customClass="ConversionViewController" customModule="TagConverter" customModuleProvider="target">
+            <connections>
+                <outlet property="appendHashtagsRadioButton" destination="SHo-tn-Bfd" id="cQA-RH-bkQ"/>
+                <outlet property="insertAtLineRadioButton" destination="HQW-LA-wmg" id="xPX-os-1BF"/>
+                <outlet property="lineStepper" destination="imP-2s-EZu" id="Udf-43-Pgu"/>
+                <outlet property="lineTextField" destination="bJw-Ms-ac2" id="XAO-TI-2uD"/>
+                <outlet property="view" destination="cZS-nT-TMm" id="SCM-OH-CEr"/>
+            </connections>
+        </customObject>
+        <numberFormatter formatterBehavior="custom10_4" localizesFormat="NO" allowsFloats="NO" usesGroupingSeparator="NO" lenient="YES" roundingMode="down" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="5" id="tDd-Go-vk7" userLabel="Line No Number Formatter">
+            <integer key="roundingIncrement" value="1"/>
+            <real key="minimum" value="1"/>
+        </numberFormatter>
     </objects>
 </document>

@@ -11,6 +11,7 @@ struct Note: Equatable {
     let url: URL
     let filename: String
     let tags: [String]
+    var hasTags: Bool { return tags.isNotEmpty }
 }
 
 func ==(lhs: Note, rhs: Note) -> Bool {

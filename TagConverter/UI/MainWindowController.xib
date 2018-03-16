@@ -263,7 +263,9 @@
         <customObject id="DnM-TO-D5H" customClass="ConversionViewController" customModule="TagConverter" customModuleProvider="target">
             <connections>
                 <outlet property="appendHashtagsRadioButton" destination="SHo-tn-Bfd" id="cQA-RH-bkQ"/>
+                <outlet property="convertButton" destination="cZS-nT-TMm" id="Jle-HG-rQ0"/>
                 <outlet property="insertAtLineRadioButton" destination="HQW-LA-wmg" id="xPX-os-1BF"/>
+                <outlet property="insertMissingHashtagsCheckbox" destination="yLl-gP-vf5" id="xye-2i-DAK"/>
                 <outlet property="lineStepper" destination="imP-2s-EZu" id="Udf-43-Pgu"/>
                 <outlet property="lineTextField" destination="bJw-Ms-ac2" id="XAO-TI-2uD"/>
                 <outlet property="view" destination="cZS-nT-TMm" id="SCM-OH-CEr"/>

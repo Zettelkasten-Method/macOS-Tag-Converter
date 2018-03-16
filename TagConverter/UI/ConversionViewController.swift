@@ -14,6 +14,7 @@ class ConversionViewController: NSViewController {
         appendHashtagsRadioButton.state = .on
         hashtagPlacement = .append
         updateLinePlacementControls()
+        disableControlsWithoutData()
     }
 
 
@@ -24,7 +25,24 @@ class ConversionViewController: NSViewController {
 
     func display(notes: [Note]) {
         self.notes = notes
+
+        disableControlsWithoutData()
     }
+
+    private func disableControlsWithoutData() {
+
+        let isEnabled = notes.isNotEmpty
+
+        insertMissingHashtagsCheckbox.isEnabled = isEnabled
+        appendHashtagsRadioButton.isEnabled = isEnabled
+        insertAtLineRadioButton.isEnabled = isEnabled
+        lineStepper.isEnabled = isEnabled
+        lineTextField.isEnabled = isEnabled
+        convertButton.isEnabled = isEnabled
+        updateLinePlacementControls()
+    }
+
+    @IBOutlet weak var convertButton: NSButton!
 
     @IBAction func convert(_ sender: Any) {
 
@@ -37,6 +55,8 @@ class ConversionViewController: NSViewController {
 
 
     // MARK: Insert Missing Hashtags Only
+
+    @IBOutlet weak var insertMissingHashtagsCheckbox: NSButton!
 
     var insertMissingHashtagsOnly = true
 

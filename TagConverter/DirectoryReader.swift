@@ -42,7 +42,9 @@ class DirectoryReader {
     func process(directoryURL: URL) {
         do {
             let fileURLs = try lister.filesInDirectory(at: directoryURL)
-            let notes = fileURLs.map(noteFactory.note(url:))
+            let notes = fileURLs
+                .sorted { $0.filename < $1.filename     }
+                .map(noteFactory.note(url:))
             output.display(path: directoryURL.path)
             output.display(notes: notes)
         } catch {

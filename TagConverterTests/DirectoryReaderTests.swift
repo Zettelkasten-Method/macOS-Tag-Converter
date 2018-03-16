@@ -219,15 +219,22 @@ class DirectoryReaderTests: XCTestCase {
 
     // MARK: Many Files in Directory
 
-    func testProcess_ListingReturns5URLs_RequestsNotesFromFactory() {
+    func testProcess_ListingReturns5URLs_RequestsSortedNotesFromFactory() {
 
-        let urls = (1...5).map { URL(fileURLWithPath: String($0)) }
-        listerDouble.testFiles = urls
+        let unsortedURLs = [
+            URL(fileURLWithPath: "5"),
+            URL(fileURLWithPath: "2"),
+            URL(fileURLWithPath: "3"),
+            URL(fileURLWithPath: "1"),
+            URL(fileURLWithPath: "4")
+        ]
+        listerDouble.testFiles = unsortedURLs
 
         service.process(directoryURL: irrelevantURL)
 
+        let sortedURLs = (1...5).map { URL(fileURLWithPath: String($0)) }
         XCTAssert(noteFactoryDouble.didRequestNote)
-        XCTAssertEqual(noteFactoryDouble.requestedURLs, urls)
+        XCTAssertEqual(noteFactoryDouble.requestedURLs, sortedURLs)
     }
 
     func testProcess_ListingReturns5URLs_DisplaysPath() {

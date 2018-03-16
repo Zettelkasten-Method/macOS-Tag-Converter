@@ -4,6 +4,8 @@ import Cocoa
 
 class MainWindowController: NSWindowController, DirectoryReaderOutput {
 
+    @IBOutlet weak var notesViewController: NotesViewController!
+    
     convenience init() {
         self.init(windowNibName: .mainWindow)
     }
@@ -29,7 +31,7 @@ class MainWindowController: NSWindowController, DirectoryReaderOutput {
     }
 
     func display(notes: [Note]) {
-        
+        notesViewController.display(notes: notes)
     }
 }
 

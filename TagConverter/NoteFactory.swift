@@ -22,7 +22,9 @@ class NoteFactory {
 
 class MetadataTagReader: TagReader {
     func tags(url: URL) -> [String] {
-        return []
+        guard let item = NSMetadataItem(url: url) else { return [] }
+        guard let tags = item.value(forAttribute: "kMDItemUserTags") as? [String] else { return [] }
+        return tags
     }
 }
 

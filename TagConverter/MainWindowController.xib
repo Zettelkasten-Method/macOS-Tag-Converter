@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="changeDirectoryButton" destination="Hu7-Ra-YtJ" id="XpZ-og-GZr"/>
                 <outlet property="directoryPathLabel" destination="F1G-UE-sJH" id="saQ-49-Tt6"/>
+                <outlet property="notesViewController" destination="afq-H4-e9W" id="azK-CZ-mYf"/>
                 <outlet property="window" destination="Jra-ab-tp5" id="Z8j-bF-6ao"/>
             </connections>
         </customObject>
@@ -33,21 +34,21 @@
                             <action selector="changeDirectory:" target="-2" id="QiZ-in-Mm0"/>
                         </connections>
                     </button>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OD9-0N-Rfi">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OD9-0N-Rfi">
                         <rect key="frame" x="-1" y="101" width="482" height="328"/>
                         <clipView key="contentView" id="tXQ-7a-Eb6">
                             <rect key="frame" x="1" y="0.0" width="480" height="327"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" rowSizeStyle="automatic" headerView="USv-b6-1X6" viewBased="YES" id="66q-t5-YxH">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="systemDefault" headerView="USv-b6-1X6" viewBased="YES" id="66q-t5-YxH">
                                     <rect key="frame" x="0.0" y="0.0" width="480" height="304"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="" width="477" minWidth="40" maxWidth="1000" id="tJP-O7-CYb">
-                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                        <tableColumn identifier="Filenames" width="300" minWidth="40" maxWidth="1000" id="tJP-O7-CYb">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="File Name">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -59,12 +60,12 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView id="i9K-lS-dHT">
-                                                    <rect key="frame" x="1" y="1" width="477" height="40"/>
+                                                <tableCellView identifier="FilenameCell" id="i9K-lS-dHT" customClass="FilenameTableCellView" customModule="TagConverter" customModuleProvider="target">
+                                                    <rect key="frame" x="1" y="1" width="300" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Sa-F2-W6y">
-                                                            <rect key="frame" x="0.0" y="23" width="477" height="17"/>
+                                                            <rect key="frame" x="0.0" y="23" width="300" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="JsF-3B-3qd">
                                                                 <font key="font" metaFont="system"/>
@@ -79,12 +80,49 @@
                                                 </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
+                                        <tableColumn identifier="Tags" width="64" minWidth="10" maxWidth="3.4028234663852886e+38" id="6il-3J-ynQ">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Tags">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="W0v-Hw-qMK">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                            <prototypeCellViews>
+                                                <tableCellView identifier="TagsCell" id="oai-QH-Edv" customClass="TagsTableCellView" customModule="TagConverter" customModuleProvider="target">
+                                                    <rect key="frame" x="304" y="1" width="64" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G1U-Mg-fcc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="HxV-zq-kWA">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                    </subviews>
+                                                    <connections>
+                                                        <outlet property="textField" destination="G1U-Mg-fcc" id="Z6a-sf-JcQ"/>
+                                                    </connections>
+                                                </tableCellView>
+                                            </prototypeCellViews>
+                                        </tableColumn>
                                     </tableColumns>
+                                    <connections>
+                                        <outlet property="dataSource" destination="afq-H4-e9W" id="0Ni-8g-GZ0"/>
+                                        <outlet property="delegate" destination="afq-H4-e9W" id="DjE-mp-FQ1"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="4d1-bs-fmf">
-                            <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="4d1-bs-fmf">
+                            <rect key="frame" x="1" y="311" width="480" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ncv-mD-nlO">
@@ -122,5 +160,11 @@
             </connections>
             <point key="canvasLocation" x="139" y="-157.5"/>
         </window>
+        <customObject id="afq-H4-e9W" customClass="NotesViewController" customModule="TagConverter" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="66q-t5-YxH" id="4lZ-tH-nWU"/>
+                <outlet property="view" destination="OD9-0N-Rfi" id="eRy-jd-tmP"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

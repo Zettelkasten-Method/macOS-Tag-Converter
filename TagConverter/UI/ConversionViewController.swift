@@ -46,11 +46,27 @@ class ConversionViewController: NSViewController {
 
     @IBAction func convert(_ sender: Any) {
 
+        guard confirmed() else { return }
+
         let conversion = Conversion(
             notes: notes,
             insertMissingHashtagsOnly: insertMissingHashtagsOnly,
             hashtagPlacement: hashtagPlacement)
         conversionHandler?(conversion)
+    }
+
+    private func confirmed() -> Bool {
+
+        let confirmationAlert = NSAlert()
+        confirmationAlert.alertStyle = .warning
+        confirmationAlert.messageText = "Overwrite files?"
+        confirmationAlert.informativeText = "The conversion will write directly to your original files. Make a backup!"
+        confirmationAlert.addButton(withTitle: "Overwrite My Files")
+        confirmationAlert.addButton(withTitle: "Cancel")
+
+        let response = confirmationAlert.runModal()
+        
+        return response == .alertFirstButtonReturn
     }
 
 

@@ -6,8 +6,14 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     lazy var windowController: MainWindowController = MainWindowController()
+    lazy var directoryReader: DirectoryReader = DirectoryReader(output: self.windowController)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+
+        windowController.directoryPickerHandler = { [weak directoryReader] in
+            directoryReader?.process(directoryURL: $0)
+        }
+
         windowController.showWindow(nil)
     }
 

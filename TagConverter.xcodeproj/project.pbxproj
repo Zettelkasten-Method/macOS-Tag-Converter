@@ -13,6 +13,7 @@
 		50C4F0FD205BABDB00A75FB1 /* TagConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F0FC205BABDB00A75FB1 /* TagConverterTests.swift */; };
 		50C4F10B205BAD9200A75FB1 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F109205BAD9200A75FB1 /* MainWindowController.swift */; };
 		50C4F10C205BAD9200A75FB1 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C4F10A205BAD9200A75FB1 /* MainWindowController.xib */; };
+		50C4F118205BB2F300A75FB1 /* DirectoryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4F117205BB2F300A75FB1 /* DirectoryReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		50C4F0FE205BABDB00A75FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C4F109205BAD9200A75FB1 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		50C4F10A205BAD9200A75FB1 /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		50C4F117205BB2F300A75FB1 /* DirectoryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				50C4F0EB205BABDB00A75FB1 /* AppDelegate.swift */,
 				50C4F109205BAD9200A75FB1 /* MainWindowController.swift */,
+				50C4F117205BB2F300A75FB1 /* DirectoryReader.swift */,
 				50C4F10A205BAD9200A75FB1 /* MainWindowController.xib */,
 				50C4F0ED205BABDB00A75FB1 /* Assets.xcassets */,
 				50C4F0EF205BABDB00A75FB1 /* MainMenu.xib */,
@@ -206,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C4F118205BB2F300A75FB1 /* DirectoryReader.swift in Sources */,
 				50C4F10B205BAD9200A75FB1 /* MainWindowController.swift in Sources */,
 				50C4F0EC205BABDB00A75FB1 /* AppDelegate.swift in Sources */,
 			);

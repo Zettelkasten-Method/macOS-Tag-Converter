@@ -23,9 +23,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="515"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hu7-Ra-YtJ">
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hu7-Ra-YtJ">
                         <rect key="frame" x="14" y="442" width="147" height="32"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Change Directory" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sMh-aA-ylv">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -34,14 +33,13 @@
                             <action selector="changeDirectory:" target="-2" id="QiZ-in-Mm0"/>
                         </connections>
                     </button>
-                    <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OD9-0N-Rfi">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OD9-0N-Rfi">
                         <rect key="frame" x="-1" y="101" width="482" height="328"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" ambiguous="YES" id="tXQ-7a-Eb6">
+                        <clipView key="contentView" id="tXQ-7a-Eb6">
                             <rect key="frame" x="1" y="0.0" width="480" height="327"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="USv-b6-1X6" viewBased="YES" id="66q-t5-YxH">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" rowSizeStyle="automatic" headerView="USv-b6-1X6" viewBased="YES" id="66q-t5-YxH">
                                     <rect key="frame" x="0.0" y="0.0" width="480" height="304"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -62,11 +60,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="i9K-lS-dHT">
-                                                    <rect key="frame" x="1" y="1" width="116" height="40"/>
+                                                    <rect key="frame" x="1" y="1" width="477" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Sa-F2-W6y">
-                                                            <rect key="frame" x="0.0" y="23" width="116" height="17"/>
+                                                            <rect key="frame" x="0.0" y="23" width="477" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="JsF-3B-3qd">
                                                                 <font key="font" metaFont="system"/>
@@ -86,7 +84,7 @@
                             </subviews>
                         </clipView>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="4d1-bs-fmf">
-                            <rect key="frame" x="1" y="311" width="459" height="16"/>
+                            <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ncv-mD-nlO">
@@ -98,9 +96,8 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F1G-UE-sJH">
-                        <rect key="frame" x="18" y="478" width="106" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="F1G-UE-sJH">
+                        <rect key="frame" x="18" y="478" width="444" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/path/to/success" id="pr9-78-39a">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -108,6 +105,17 @@
                         </textFieldCell>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="F1G-UE-sJH" secondAttribute="trailing" constant="20" id="GtJ-ut-E5U"/>
+                    <constraint firstItem="OD9-0N-Rfi" firstAttribute="top" secondItem="Hu7-Ra-YtJ" secondAttribute="bottom" constant="20" id="OdA-Zg-LbS"/>
+                    <constraint firstItem="OD9-0N-Rfi" firstAttribute="leading" secondItem="0Do-OY-Yay" secondAttribute="leading" constant="-1" id="dST-Lt-I6f"/>
+                    <constraint firstAttribute="bottom" secondItem="OD9-0N-Rfi" secondAttribute="bottom" constant="101" id="fCq-nf-ySt"/>
+                    <constraint firstItem="F1G-UE-sJH" firstAttribute="leading" secondItem="0Do-OY-Yay" secondAttribute="leading" constant="20" id="nlg-jn-cjL"/>
+                    <constraint firstItem="Hu7-Ra-YtJ" firstAttribute="leading" secondItem="F1G-UE-sJH" secondAttribute="leading" id="qAL-md-FBD"/>
+                    <constraint firstAttribute="trailing" secondItem="OD9-0N-Rfi" secondAttribute="trailing" constant="-1" id="uh7-La-FfY"/>
+                    <constraint firstItem="F1G-UE-sJH" firstAttribute="top" secondItem="0Do-OY-Yay" secondAttribute="top" constant="20" id="yfr-MH-baI"/>
+                    <constraint firstItem="Hu7-Ra-YtJ" firstAttribute="top" secondItem="F1G-UE-sJH" secondAttribute="bottom" constant="8" id="z6N-CL-N73"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="RrG-sQ-9Cz"/>

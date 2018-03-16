@@ -51,6 +51,27 @@ class HashtagConverter {
 class NoteConverter {
     func process(note: Note, conversion: Conversion) throws {
 
+        guard note.hasTags else { return }
+        
+        var encoding: String.Encoding = .utf8
+        var content = try String(contentsOf: note.url, usedEncoding: &encoding)
+        let hashtags = note.tags.map { "#\($0)" }
+
+        let haystack = content.lowercased()
+        let missingHashtags: [String] = hashtags.filter { !haystack.contains($0.lowercased()) }
+
+        guard missingHashtags.isNotEmpty else { return }
+
+        let hashtagLine = missingHashtags.joined(separator: " ")
+
+        switch conversion.hashtagPlacement {
+        case .append: content = content + "\n\n\(hashtagLine)\n"
+        case .atLine(let lineNumber):
+            let (before, after) = split(string: content, lineNumber: max(lineNumber, 1) - 1)
+            content = before + "\(hashtagLine)\n" + after
+        }
+
+        try content.write(to: note.url, atomically: false, encoding: encoding)
     }
 }
 

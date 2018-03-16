@@ -107,20 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				50C4F0EB205BABDB00A75FB1 /* AppDelegate.swift */,
-				50C4F109205BAD9200A75FB1 /* MainWindowController.swift */,
-				50C4F12F205BF4F100A75FB1 /* Collection+safeSubscript.swift */,
-				50C4F117205BB2F300A75FB1 /* DirectoryReader.swift */,
-				50C4F121205BB7AB00A75FB1 /* NoteFactory.swift */,
-				50C4F11F205BB53E00A75FB1 /* DirectoryLister.swift */,
-				50C4F11B205BB4E100A75FB1 /* FileExistenceChecker.swift */,
-				50C4F119205BB4A700A75FB1 /* FileManager+DirectoryLister.swift */,
-				50C4F11D205BB4FD00A75FB1 /* FileManager+FileExistenceChecker.swift */,
-				50C4F10A205BAD9200A75FB1 /* MainWindowController.xib */,
-				50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */,
-				50C4F12D205BF2BC00A75FB1 /* NotesViewController.swift */,
-				50C4F131205BF5B700A75FB1 /* NoteTableCellView.swift */,
-				50C4F0ED205BABDB00A75FB1 /* Assets.xcassets */,
-				50C4F0EF205BABDB00A75FB1 /* MainMenu.xib */,
+				50C4F137205C0B5200A75FB1 /* Application Services */,
+				50C4F135205C0B3D00A75FB1 /* UI */,
+				50C4F136205C0B4900A75FB1 /* Util */,
 				50C4F0F2205BABDB00A75FB1 /* Info.plist */,
 				50C4F0F3205BABDB00A75FB1 /* TagConverter.entitlements */,
 			);
@@ -138,6 +127,41 @@
 				50C4F0FE205BABDB00A75FB1 /* Info.plist */,
 			);
 			path = TagConverterTests;
+			sourceTree = "<group>";
+		};
+		50C4F135205C0B3D00A75FB1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				50C4F109205BAD9200A75FB1 /* MainWindowController.swift */,
+				50C4F10A205BAD9200A75FB1 /* MainWindowController.xib */,
+				50C4F133205BFE6F00A75FB1 /* ConversionViewController.swift */,
+				50C4F12D205BF2BC00A75FB1 /* NotesViewController.swift */,
+				50C4F131205BF5B700A75FB1 /* NoteTableCellView.swift */,
+				50C4F0ED205BABDB00A75FB1 /* Assets.xcassets */,
+				50C4F0EF205BABDB00A75FB1 /* MainMenu.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		50C4F136205C0B4900A75FB1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				50C4F12F205BF4F100A75FB1 /* Collection+safeSubscript.swift */,
+				50C4F119205BB4A700A75FB1 /* FileManager+DirectoryLister.swift */,
+				50C4F11D205BB4FD00A75FB1 /* FileManager+FileExistenceChecker.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		50C4F137205C0B5200A75FB1 /* Application Services */ = {
+			isa = PBXGroup;
+			children = (
+				50C4F117205BB2F300A75FB1 /* DirectoryReader.swift */,
+				50C4F121205BB7AB00A75FB1 /* NoteFactory.swift */,
+				50C4F11F205BB53E00A75FB1 /* DirectoryLister.swift */,
+				50C4F11B205BB4E100A75FB1 /* FileExistenceChecker.swift */,
+			);
+			path = "Application Services";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
